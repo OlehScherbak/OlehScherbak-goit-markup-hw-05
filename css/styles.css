@@ -344,8 +344,7 @@ address {
   letter-spacing: 0.03em;
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 10px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .team-item-text {
@@ -355,14 +354,11 @@ address {
   margin-bottom: 16px;
 }
 
-.social-list-container {
-  padding-bottom: 30px;
-}
-
 .social-list {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 .social-link-item:not(:last-child) {
@@ -425,6 +421,14 @@ address {
   justify-content: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: border-color;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--timing-function);
+}
+
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--axcent);
 }
 
 .client-icon {
@@ -472,14 +476,6 @@ address {
 
 .footer-address-link {
   color: var(--text-white);
-  transition-property: color;
-  transition-duration: var(--trans-duration);
-  transition-timing-function: var(--timing-function);
-}
-
-.footer-address-link:hover,
-.footer-address-link:focus {
-  color: var(--axcent);
 }
 
 .footer-contact-item {
@@ -592,9 +588,8 @@ address {
   line-height: 2;
   letter-spacing: 0.06em;
   padding-top: 20px;
-  padding-bottom: 4px;
   padding-left: 24px;
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 
 .case-text {
@@ -648,6 +643,7 @@ address {
   margin-bottom: 0;
 }
 
+/* modal */
 .backdrop {
   position: fixed;
   top: 0;
@@ -656,11 +652,12 @@ address {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity var(--trans-duration) var(--timing-function);
+  transition: opacity, visibility var(--trans-duration) var(--timing-function);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
