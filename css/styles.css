@@ -652,13 +652,17 @@ address {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity, visibility var(--trans-duration) var(--timing-function);
+  transform: scale(1);
+  transition: opacity var(--trans-duration) var(--timing-function),
+    visibility var(--trans-duration) var(--timing-function),
+    transform var(--trans-duration) var(--timing-function);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: scale(0.9);
 }
 
 .modal {
@@ -672,6 +676,7 @@ address {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   background-color: var(--main-background-color);
+  /* transition: transform var(--trans-duration) var(--timing-function); */
 }
 
 .button-modal {
